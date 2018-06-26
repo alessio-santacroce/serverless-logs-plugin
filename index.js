@@ -14,8 +14,8 @@ class ServerlessPlugin {
   }
 
   afterPackageInitialize() {
-    const config = this.serverless.service.provider.logPlugin
-    // setting defaults for missing config parameters
+    const config = this.serverless.service.provider.logsPlugin || {}
+    // setting defaults for missing config parameter
     config.LogGroup = config.LogGroup || {};
     config.LogGroup.RetentionInDays = config.LogGroup.RetentionInDays || 14;
     config.SubscriptionFilter = config.SubscriptionFilter || {}
@@ -31,7 +31,7 @@ class ServerlessPlugin {
         resources[logGroup] = {
             'Properties': {
                 'LogGroupName': logGroupName,
-                'RetentionInDays': config.RetentionInDays
+                'RetentionInDays': config.LogGroup.RetentionInDays
             }
         }
         if (config.SubscriptionFilter.DestinationArn) {
