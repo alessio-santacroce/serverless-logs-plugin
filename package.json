@@ -1,0 +1,22 @@
+{
+  "name": "serverless-logs-plugin",
+  "version": "0.0.3",
+  "description": "A serverless framework plugin for AWS to add log retention and the resource to subscribe log groups",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "serverless",
+    "aws",
+    "plugin",
+    "log",
+    "SubscriptionFilter"
+  ],
+  "author": "Alessio Santacroce",
+  "license": "MIT",
+  "repository": {
+  	"type": "git",
+  	"url": "https://github.com/alessio-santacroce/serverless-logs-plugin.git"
+  }
+}
