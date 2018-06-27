@@ -1,6 +1,6 @@
 {
   "name": "serverless-logs-plugin",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "A serverless framework plugin for AWS to add log retention and the resource to subscribe log groups",
   "main": "index.js",
   "scripts": {

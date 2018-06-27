@@ -46,7 +46,8 @@ class ServerlessPlugin {
         cli.log('Added RetentionInDays ' + config.RetentionInDays +' for log group ' + logGroupName);
 
         const subscriptionResourceName = normalizedFunctionName + 'SubscriptionFilter';
-        addLogSubscriptionResource(subscriptionResourceName, logGroupName, func);
+        const dependsOn = normalizedFunctionName + 'LambdaFunction';
+        addLogSubscriptionResource(subscriptionResourceName, logGroupName, dependsOn);
     }
 
     for (var i = 0; i < config.additionalSubscriptions.length; i++) {
